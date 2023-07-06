@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/CloudNationHQ/az-cn-module-tf-cosmosdb/compare/v0.2.0...v0.3.0) (2023-07-06)
+
+
+### Features
+
+* **deps:** bump google.golang.org/grpc from 1.51.0 to 1.53.0 in /tests ([#8](https://github.com/CloudNationHQ/az-cn-module-tf-cosmosdb/issues/8)) ([388f1e7](https://github.com/CloudNationHQ/az-cn-module-tf-cosmosdb/commit/388f1e7bcc607540ee8c69adf633394a27f077c7))
+
 ## [0.2.0](https://github.com/CloudNationHQ/az-cn-module-tf-cosmosdb/compare/v0.1.0...v0.2.0) (2023-07-06)
 
 
