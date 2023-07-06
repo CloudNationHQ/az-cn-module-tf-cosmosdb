@@ -73,8 +73,8 @@ resource "azurerm_cosmosdb_mongo_collection" "mongodb_collection" {
   resource_group_name = azurerm_cosmosdb_account.db.resource_group_name
   database_name       = azurerm_cosmosdb_mongo_database.mongodb[each.value.db_key].name
 
-  default_ttl_seconds    = try(each.value.default_ttl_seconds, -1)
-  shard_key              = each.value.shard_key
+  default_ttl_seconds = try(each.value.default_ttl_seconds, -1)
+  shard_key           = each.value.shard_key
 
   # conflicts with throughput
   #autoscale_settings {
