@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/CloudNationHQ/az-cn-module-tf-cosmosdb/compare/v0.1.0...v0.2.0) (2023-07-06)
+
+
+### Features
+
+* add initial tests ([#6](https://github.com/CloudNationHQ/az-cn-module-tf-cosmosdb/issues/6)) ([cc036cd](https://github.com/CloudNationHQ/az-cn-module-tf-cosmosdb/commit/cc036cdf2dc560f259d1b330f8fc86cc7d722324))
+
 ## 0.1.0 (2023-07-06)
 
 
