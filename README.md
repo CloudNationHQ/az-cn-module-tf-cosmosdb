@@ -1,0 +1,1 @@
+# az-cn-module-tf-cosmosdb
