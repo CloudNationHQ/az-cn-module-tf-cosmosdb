@@ -156,6 +156,12 @@ module "cosmosdb" {
 | `workload` | contains the workload name used, for naming convention | string | yes |
 | `environment` | contains shortname of the environment used for naming convention | string | yes |
 
+## Outputs
+
+| Name | Description |
+| :-- | :-- |
+| `account` | contains all cosmosdb account config |
+
 ## Testing
 
 The github repository utilizes a Makefile to conduct tests to evaluate and validate different configurations of the module. These tests are designed to enhance its stability and reliability.
