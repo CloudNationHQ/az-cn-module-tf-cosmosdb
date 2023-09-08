@@ -26,10 +26,8 @@ The below examples shows the usage when consuming the module:
 module "cosmosdb" {
   source = "github.com/cloudnationhq/az-cn-module-tf-cosmosdb"
 
-  workload    = var.workload
-  environment = var.environment
-
   cosmosdb = {
+    name          = module.naming.cosmosdb_account.name
     location      = module.rg.groups.demo.location
     resourcegroup = module.rg.groups.demo.name
     kind          = "MongoDB"
@@ -39,7 +37,6 @@ module "cosmosdb" {
       weu = { location = "westeurope", failover_priority = 0 }
     }
   }
-  depends_on = [module.rg]
 }
 ```
 
@@ -49,10 +46,8 @@ module "cosmosdb" {
 module "cosmosdb" {
   source = "github.com/cloudnationhq/az-cn-module-tf-cosmosdb"
 
-  workload    = var.workload
-  environment = var.environment
-
   cosmosdb = {
+    name          = module.naming.cosmosdb_account.name
     location      = module.rg.groups.demo.location
     resourcegroup = module.rg.groups.demo.name
     kind          = "MongoDB"
@@ -86,7 +81,6 @@ module "cosmosdb" {
       }
     }
   }
-  depends_on = [module.rg]
 }
 ```
 
@@ -96,10 +90,8 @@ module "cosmosdb" {
 module "cosmosdb" {
   source = "github.com/cloudnationhq/az-cn-module-tf-cosmosdb"
 
-  workload    = var.workload
-  environment = var.environment
-
   cosmosdb = {
+    name          = module.naming.cosmosdb_account.name
     location      = module.rg.groups.demo.location
     resourcegroup = module.rg.groups.demo.name
     kind          = "GlobalDocumentDB"
@@ -116,7 +108,7 @@ module "cosmosdb" {
         db1 = {
           throughput = 400
           containers = {
-            ct1 = {
+            sqlc1 = {
               throughput       = 400
               unique_key_paths = ["/definition/idlong"]
               index_policy = {
@@ -132,7 +124,35 @@ module "cosmosdb" {
       }
     }
   }
-  depends_on = [module.rg]
+}
+```
+
+## Usage: tables
+
+```hcl
+module "cosmosdb" {
+  source = "../.."
+
+  cosmosdb = {
+    name          = module.naming.cosmosdb_account.name
+    location      = module.rg.groups.demo.location
+    resourcegroup = module.rg.groups.demo.name
+    kind          = "GlobalDocumentDB"
+    capabilities  = ["EnableTable"]
+
+    geo_location = {
+      weu = {
+        location          = "westeurope"
+        failover_priority = 0
+      }
+    }
+
+    tables = {
+      table1 = { name = "products", throughput = 400 }
+      table2 = { name = "orders", throughput = 400
+      }
+    }
+  }
 }
 ```
 
@@ -178,7 +198,7 @@ Each of these tests contributes to the robustness and resilience of the module. 
 
 ## Authors
 
-Module is maintained by [these awesome contributors](https://github.com/cloudnationhq/az-cn-module-tf-kv/graphs/contributors).
+Module is maintained by [these awesome contributors](https://github.com/cloudnationhq/az-cn-module-tf-cosmosdb/graphs/contributors).
 
 ## License
 
@@ -188,3 +208,4 @@ MIT Licensed. See [LICENSE](https://github.com/cloudnationhq/az-cn-module-tf-cos
 
 - [Documentation](https://learn.microsoft.com/en-us/azure/cosmos-db/)
 - [Rest Api](https://learn.microsoft.com/en-us/rest/api/cosmos-db/)
+- [Rest Api Specs](https://github.com/Azure/azure-rest-api-specs/tree/main/specification/cosmos-db)
