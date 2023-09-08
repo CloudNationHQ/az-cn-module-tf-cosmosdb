@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.0](https://github.com/CloudNationHQ/az-cn-module-tf-cosmosdb/compare/v0.3.0...v0.4.0) (2023-09-08)
+
+
+### Features
+
+* add consistent naming ([#17](https://github.com/CloudNationHQ/az-cn-module-tf-cosmosdb/issues/17)) ([092c2f9](https://github.com/CloudNationHQ/az-cn-module-tf-cosmosdb/commit/092c2f98c7dd8213cac70934d928b66cf3ead3c6))
+* **deps:** bump github.com/gruntwork-io/terratest in /tests ([#16](https://github.com/CloudNationHQ/az-cn-module-tf-cosmosdb/issues/16)) ([d119989](https://github.com/CloudNationHQ/az-cn-module-tf-cosmosdb/commit/d11998939a2d613645b2c399a668dfc57b6ed8e9))
+
 ## [0.3.0](https://github.com/CloudNationHQ/az-cn-module-tf-cosmosdb/compare/v0.2.0...v0.3.0) (2023-07-06)
 
 
