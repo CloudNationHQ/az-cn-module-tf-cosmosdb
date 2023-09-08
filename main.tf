@@ -137,3 +137,4 @@ resource "azurerm_cosmosdb_sql_container" "sqlc" {
     paths = each.value.unique_key
   }
 }
+
