@@ -2,13 +2,18 @@ provider "azurerm" {
   features {}
 }
 
+module "naming" {
+  source = "github.com/cloudnationhq/az-cn-module-tf-naming"
+
+  suffix = ["demo", "dev"]
+}
+
 module "rg" {
   source = "github.com/cloudnationhq/az-cn-module-tf-rg"
 
-  environment = var.environment
-
   groups = {
     demo = {
+      name   = module.naming.resource_group.name
       region = "westeurope"
     }
   }
@@ -17,10 +22,8 @@ module "rg" {
 module "cosmosdb" {
   source = "../.."
 
-  workload    = var.workload
-  environment = var.environment
-
   cosmosdb = {
+    name          = module.naming.cosmosdb_account.name
     location      = module.rg.groups.demo.location
     resourcegroup = module.rg.groups.demo.name
     kind          = "MongoDB"
@@ -30,12 +33,6 @@ module "cosmosdb" {
       weu = {
         location          = "westeurope"
         failover_priority = 0
-      }
-    }
-
-    tables = {
-      table1 = {
-        throughput = 400
       }
     }
 

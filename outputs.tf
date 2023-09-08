@@ -19,5 +19,5 @@ output "sqldb" {
 }
 
 output "sql_container" {
-  value = azurerm_cosmosdb_sql_container.sql_container
+  value = azurerm_cosmosdb_sql_container.sqlc
 }
