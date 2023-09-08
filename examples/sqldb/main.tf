@@ -2,13 +2,18 @@ provider "azurerm" {
   features {}
 }
 
+module "naming" {
+  source = "github.com/cloudnationhq/az-cn-module-tf-naming"
+
+  suffix = ["demo", "dev"]
+}
+
 module "rg" {
   source = "github.com/cloudnationhq/az-cn-module-tf-rg"
 
-  environment = var.environment
-
   groups = {
     demo = {
+      name   = module.naming.resource_group.name
       region = "westeurope"
     }
   }
@@ -17,10 +22,8 @@ module "rg" {
 module "cosmosdb" {
   source = "../.."
 
-  workload    = var.workload
-  environment = var.environment
-
   cosmosdb = {
+    name          = module.naming.cosmosdb_account.name
     location      = module.rg.groups.demo.location
     resourcegroup = module.rg.groups.demo.name
     kind          = "GlobalDocumentDB"
@@ -37,7 +40,7 @@ module "cosmosdb" {
         db1 = {
           throughput = 400
           containers = {
-            ct1 = {
+            sqlc1 = {
               throughput       = 400
               unique_key_paths = ["/definition/idlong"]
               index_policy = {
@@ -53,5 +56,4 @@ module "cosmosdb" {
       }
     }
   }
-  depends_on = [module.rg]
 }
