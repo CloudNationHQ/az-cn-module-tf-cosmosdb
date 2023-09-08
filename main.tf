@@ -15,7 +15,7 @@ resource "azurerm_cosmosdb_account" "db" {
   local_authentication_disabled         = try(var.cosmosdb.enable.local_authentication_disabled, false)
   network_acl_bypass_for_azure_services = try(var.cosmosdb.enable.network_acl_bypass_for_azure_services, false)
   is_virtual_network_filter_enabled     = try(var.cosmosdb.enable_virtual_network_filter, false)
-  public_network_access_enabled         = try(var.cosmosdb.enable.public_network_access, true)
+    public_network_access_enabled         = try(var.cosmosdb.enable.public_network_access, true)
   analytical_storage_enabled            = try(var.cosmosdb.enable.analytical_storage, false)
 
   dynamic "capabilities" {
