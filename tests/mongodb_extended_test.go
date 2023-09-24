@@ -44,7 +44,7 @@ func TestCosmosDbAccount(t *testing.T) {
 		tfOpts := shared.GetTerraformOptions("../examples/complete")
 		defer shared.Cleanup(t, tfOpts)
 
-		cosmosDbAccountMap := terraform.OutputMap(t, tfOpts, "cosmosdb_account")
+		cosmosDbAccountMap := terraform.OutputMap(t, tfOpts, "account")
 		subscriptionId := terraform.Output(t, tfOpts, "subscriptionId")
 
 		cosmosDbAccountDetails := &CosmosDbAccountDetails{
