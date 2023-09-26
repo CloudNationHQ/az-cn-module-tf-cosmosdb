@@ -20,7 +20,7 @@ module "rg" {
 }
 
 module "cosmosdb" {
-  source = "../.."
+  source = "../../"
 
   cosmosdb = {
     name          = module.naming.cosmosdb_account.name
@@ -57,5 +57,4 @@ module "cosmosdb" {
       }
     }
   }
-  depends_on = [module.rg]
 }

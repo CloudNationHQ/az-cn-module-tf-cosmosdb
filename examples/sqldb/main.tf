@@ -50,9 +50,6 @@ module "cosmosdb" {
             }
           }
         }
-        db2 = {
-          throughput = 400
-        }
       }
     }
   }
