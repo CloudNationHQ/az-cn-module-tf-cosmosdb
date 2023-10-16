@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.6.0](https://github.com/CloudNationHQ/az-cn-module-tf-cosmosdb/compare/v0.5.0...v0.6.0) (2023-10-16)
+
+
+### Features
+
+* **deps:** bump github.com/Azure/azure-sdk-for-go/sdk/azidentity ([#31](https://github.com/CloudNationHQ/az-cn-module-tf-cosmosdb/issues/31)) ([1d63179](https://github.com/CloudNationHQ/az-cn-module-tf-cosmosdb/commit/1d63179e1746f760ca23855657225b8118b9c0a4))
+* **deps:** bump github.com/stretchr/testify in /tests ([#27](https://github.com/CloudNationHQ/az-cn-module-tf-cosmosdb/issues/27)) ([b6b5951](https://github.com/CloudNationHQ/az-cn-module-tf-cosmosdb/commit/b6b595199dcb38b800258bf3b344c4297f678512))
+* **deps:** bump golang.org/x/net from 0.14.0 to 0.17.0 in /tests ([#29](https://github.com/CloudNationHQ/az-cn-module-tf-cosmosdb/issues/29)) ([9c53116](https://github.com/CloudNationHQ/az-cn-module-tf-cosmosdb/commit/9c53116924ba0cfb7a1e7105eea4dcca077e3c95))
+
 ## [0.5.0](https://github.com/CloudNationHQ/az-cn-module-tf-cosmosdb/compare/v0.4.0...v0.5.0) (2023-09-26)
 
 
